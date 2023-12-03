@@ -2,24 +2,39 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="popup.css">
-    <script src="script.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sree Shivesh</title>
 </head>
 <body>
-    <label for="min">MIN: </label>
-    <input type="number" id="min">
-    <br><br>
-    <label for="max">MAX: </label>
-    <input type="number" id="max">
-    <!-- button-html -->
-    <br><br>
-    <div class="box-1">
-        <div id="generateButton" class="btn btn-one">
-          <span>Generate</span>
+    <div id="originalContent">
+        <label for="minInput">MIN: </label>
+        <input type="number" id="minInput" value="0">
+        <br><br>
+        <label for="maxInput">MAX: </label>
+        <input type="number" id="maxInput" value="100">
+        <!-- button-html -->
+        <br><br><br>
+        
+        <div class="box-1">
+            <div id="generateButton" class="btn btn-one" onclick="generateRandomNumber()">
+            <span>GENERATE</span>
+            </div>
         </div>
     </div>
-    <p id="result"></p>
+
+
+    <div id="resultContainer">
+        <div id="resultNumber"></div>
+        <div id="buttonsContainer">
+            <div id="generateMoreButton">
+                Generate More
+            </div>
+            <div id="retryButton" title="Reset">
+                <img src="retry.png">
+            </div>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
 </body>
 </html>

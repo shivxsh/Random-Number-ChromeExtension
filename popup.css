@@ -1,13 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:900i');
 
 body{
-    font-family: Poppins, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: rgb(200, 255, 255);
-    max-width: 400px;
-    max-height: 350px;
+    padding: 30px;
+    width: 250px; /* Adjust the width as needed */
+    height: 150px; /* Adjust the height as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center;     */
 }
+
 .box-1 { 
     background-color: #FF6766; 
+    padding: 10px;
+    cursor: pointer;
 }
 
 .btn-one {
@@ -63,7 +71,7 @@ body{
 
 input{
     border-radius: 100px;
-    max-width: 100px;
+    max-width: 70px;
     /* max-height: 100px; */
 }
 
@@ -73,4 +81,30 @@ input::-webkit-inner-spin-button {
    margin: 0;
 }
 
+#resultNumber {
+    /* text-align: center; */
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+
+#resultContainer {
+    text-align: center;
+}
+
+#buttonsContainer {
+    display: none;
+    justify-content: space-between; /* Add space between buttons */
+    margin-top: 20px; /* Adjust as needed */
+}
+
+#generateMoreButton{
+    cursor: pointer;
+    background-color: #FF6766; 
+    padding: 10px;
+}
+
+#retryButton {
+    cursor: pointer;    
+}
 

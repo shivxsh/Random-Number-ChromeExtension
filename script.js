@@ -1,32 +1,38 @@
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('DOMContentLoaded event fired');
     var generateButton = document.getElementById('generateButton');
+    var generateMoreButton = document.getElementById('generateMoreButton');
+    var retryButton = document.getElementById('retryButton');
 
-    generateButton.addEventListener('click', function () {
-        getRandomNumber();
-    });
+    generateButton.addEventListener('click', generateRandomNumber);
+    generateMoreButton.addEventListener('click', generateRandomNumber);
+    retryButton.addEventListener('click', resetPage);
 });
 
-function getRandomNumber(){
-    const min = parseInt(document.getElementById("min").value);
-    const max = parseInt(document.getElementById("max").value);
 
-    // min = Math.ceil(min);
-    // max = Math.floor(max);
+function generateRandomNumber() {
+    var min = parseInt(document.getElementById("minInput").value);
+    var max = parseInt(document.getElementById("maxInput").value);
 
-    if(min <= max){
-        const randomNumber = Math.floor(Math.random() * (max-min+1) + min);
-        // document.getElementById("result").innerHTML = randomNumber;
-        var newWindow = window.open('', 'Random Number', 'width=300,height=200');
-        newWindow.document.write('<h1>Random Number: ' + randomNumber + '</h1>');
+    if (min <= max) {
+        var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        document.getElementById("originalContent").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+
+        document.getElementById("resultNumber").innerHTML = randomNumber;
+
+        document.getElementById("buttonsContainer").style.display = "flex";
     } else {
         alert("Error: Min value must be less than or equal to Max value");
     }
-    
-    // else{
-    //     document.getElementById("result").innerHTML = "Error: MIN should be less than MAX"
-    // }    
 }
 
 
+function resetPage() {
 
+    document.getElementById("minInput").value = "0";
+    document.getElementById("maxInput").value = "0";
+
+    document.getElementById("originalContent").style.display = "block";
+    document.getElementById("resultContainer").style.display = "none";
+}
